@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+  wireguard:
+    image: webmessage:latest
+    container_name: nginx
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Tomsk
+    volumes:
+      - /home/ParserBet2/:/usr/share/nginx/html/  
+      - /home/webmessage/nginx.conf:/etc/nginx/nginx.conf  
+      - /home/webmessage/conf-files/:/etc/nginx/conf.d/
+      - /home/webmessage/log/:/var/log/nginx/ 
+    ports:
+      - 5142:80
+    restart: unless-stopped
