@@ -1,8 +1,8 @@
 version: "2.1"
 services:
   wireguard:
-    image: webmessage:latest
-    container_name: nginx
+    image: nginx:latest
+    container_name: webmessage
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
